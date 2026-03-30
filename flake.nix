@@ -9,9 +9,9 @@
       packages.${system}.default = pkgs.python3Packages.buildPythonPackage {
         pname = "vector-quantize-pytorch";
         version = "0.1.0";
-        format = "pyproject";
+        pyproject = true;
         src = ./.;
-        build-system = [ pkgs.python3Packages.setuptools ];
+        build-system = [ pkgs.python3Packages.hatchling ];
         dependencies = with pkgs.python3Packages; [ torch einops einx ];
         
         pythonRelaxDeps = true;
